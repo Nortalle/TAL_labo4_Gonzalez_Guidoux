@@ -1,0 +1,10 @@
+### JupyterNotebook ###
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+stanford-corenlp-3.9.2-models-french.jar
+stanford-corenlp-3.9.2.jar
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+#
