@@ -13225,9 +13225,31 @@ div#notebook {
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url1</span><span class="p">)</span>
 <span class="n">raw</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)[</span><span class="mi">4340</span><span class="p">:</span><span class="mi">489067</span><span class="p">]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>484727</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13336,9 +13358,30 @@ div#notebook {
     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">ne_chunk</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">):</span>
             <span class="n">trees</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span><span class="p">(),</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chunk</span><span class="p">)))</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2812</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13346,7 +13389,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Nous-en-sortons-les-15-entit&#233;s-nomm&#233;es-les-plus-fr&#233;quentes">Nous en sortons les 15 entit&#233;s nomm&#233;es les plus fr&#233;quentes<a class="anchor-link" href="#Nous-en-sortons-les-15-entit&#233;s-nomm&#233;es-les-plus-fr&#233;quentes">&#182;</a></h4>
+<h4 id="Nous-comptons-le-nombre-d'apparitions">Nous comptons le nombre d'apparitions<a class="anchor-link" href="#Nous-comptons-le-nombre-d'apparitions">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13356,9 +13399,39 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nltk_most_commons</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+<span class="n">nltk_most_commons</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[((&#39;PERSON&#39;, &#39;Priscilla&#39;), 227),
+ ((&#39;PERSON&#39;, &#39;Farwell&#39;), 194),
+ ((&#39;GPE&#39;, &#39;Priscilla&#39;), 193),
+ ((&#39;PERSON&#39;, &#39;Ledyard&#39;), 106),
+ ((&#39;PERSON&#39;, &#39;Master Farwell&#39;), 64),
+ ((&#39;ORGANIZATION&#39;, &#39;Boswell&#39;), 61),
+ ((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 59),
+ ((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 55),
+ ((&#39;GPE&#39;, &#39;Kenmore&#39;), 55),
+ ((&#39;PERSON&#39;, &#39;Margaret&#39;), 52)]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13541,7 +13614,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Nous-en-sortons-les-15-entit&#233;s-nomm&#233;es-les-plus-fr&#233;quentes">Nous en sortons les 15 entit&#233;s nomm&#233;es les plus fr&#233;quentes<a class="anchor-link" href="#Nous-en-sortons-les-15-entit&#233;s-nomm&#233;es-les-plus-fr&#233;quentes">&#182;</a></h4>
+<h4 id="Nous-comptons-le-nombre-d'apparitions">Nous comptons le nombre d'apparitions<a class="anchor-link" href="#Nous-comptons-le-nombre-d'apparitions">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13551,9 +13624,39 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stanfords_most_commons</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+<span class="n">stanfords_most_commons</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[((&#39;PERSON&#39;, &#39;Priscilla&#39;), 531),
+ ((&#39;PERSON&#39;, &#39;Farwell&#39;), 311),
+ ((&#39;LOCATION&#39;, &#39;Ledyard&#39;), 135),
+ ((&#39;PERSON&#39;, &#39;Boswell&#39;), 134),
+ ((&#39;LOCATION&#39;, &#39;Kenmore&#39;), 71),
+ ((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 59),
+ ((&#39;PERSON&#39;, &#39;Margaret&#39;), 57),
+ ((&#39;PERSON&#39;, &#39;Priscilla Glenn&#39;), 54),
+ ((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 53),
+ ((&#39;PERSON&#39;, &#39;Dick&#39;), 44)]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13573,7 +13676,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(nltk, stanford)&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">nltk_freq</span><span class="p">,</span> <span class="n">stanford</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nltk_most_commons</span><span class="p">[:</span><span class="mi">15</span><span class="p">],</span> <span class="n">stanfords_most_commons</span><span class="p">[:</span><span class="mi">15</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nltk_freq</span><span class="p">,</span> <span class="n">stanford</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nltk_freq</span><span class="p">,</span> <span class="n">stanford</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13591,21 +13694,21 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(nltk, stanford)
-((&#39;PERSON&#39;, &#39;Priscilla&#39;), 227) ((&#39;PERSON&#39;, &#39;Priscilla&#39;), 531)
-((&#39;PERSON&#39;, &#39;Farwell&#39;), 194) ((&#39;PERSON&#39;, &#39;Farwell&#39;), 311)
-((&#39;GPE&#39;, &#39;Priscilla&#39;), 193) ((&#39;LOCATION&#39;, &#39;Ledyard&#39;), 135)
-((&#39;PERSON&#39;, &#39;Ledyard&#39;), 106) ((&#39;PERSON&#39;, &#39;Boswell&#39;), 134)
-((&#39;PERSON&#39;, &#39;Master Farwell&#39;), 64) ((&#39;LOCATION&#39;, &#39;Kenmore&#39;), 71)
-((&#39;ORGANIZATION&#39;, &#39;Boswell&#39;), 61) ((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 59)
-((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 59) ((&#39;PERSON&#39;, &#39;Margaret&#39;), 57)
-((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 55) ((&#39;PERSON&#39;, &#39;Priscilla Glenn&#39;), 54)
-((&#39;GPE&#39;, &#39;Kenmore&#39;), 55) ((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 53)
-((&#39;PERSON&#39;, &#39;Margaret&#39;), 52) ((&#39;PERSON&#39;, &#39;Dick&#39;), 44)
-((&#39;GPE&#39;, &#39;Boswell&#39;), 47) ((&#39;PERSON&#39;, &#39;McAlpin&#39;), 40)
-((&#39;PERSON&#39;, &#39;Dick&#39;), 42) ((&#39;PERSON&#39;, &#39;Margaret Moffatt&#39;), 39)
-((&#39;ORGANIZATION&#39;, &#39;Priscilla&#39;), 41) ((&#39;PERSON&#39;, &#39;Mary McAdam&#39;), 36)
-((&#39;ORGANIZATION&#39;, &#39;McAlpin&#39;), 40) ((&#39;PERSON&#39;, &#39;Theodora&#39;), 34)
-((&#39;ORGANIZATION&#39;, &#39;Farwell&#39;), 39) ((&#39;LOCATION&#39;, &#39;States&#39;), 34)
+((&#39;PERSON&#39;, &#39;Priscilla&#39;), 227)		((&#39;PERSON&#39;, &#39;Priscilla&#39;), 531)
+((&#39;PERSON&#39;, &#39;Farwell&#39;), 194)		((&#39;PERSON&#39;, &#39;Farwell&#39;), 311)
+((&#39;GPE&#39;, &#39;Priscilla&#39;), 193)		((&#39;LOCATION&#39;, &#39;Ledyard&#39;), 135)
+((&#39;PERSON&#39;, &#39;Ledyard&#39;), 106)		((&#39;PERSON&#39;, &#39;Boswell&#39;), 134)
+((&#39;PERSON&#39;, &#39;Master Farwell&#39;), 64)		((&#39;LOCATION&#39;, &#39;Kenmore&#39;), 71)
+((&#39;ORGANIZATION&#39;, &#39;Boswell&#39;), 61)		((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 59)
+((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 59)		((&#39;PERSON&#39;, &#39;Margaret&#39;), 57)
+((&#39;PERSON&#39;, &#39;Nathaniel&#39;), 55)		((&#39;PERSON&#39;, &#39;Priscilla Glenn&#39;), 54)
+((&#39;GPE&#39;, &#39;Kenmore&#39;), 55)		((&#39;ORGANIZATION&#39;, &#39;Travers&#39;), 53)
+((&#39;PERSON&#39;, &#39;Margaret&#39;), 52)		((&#39;PERSON&#39;, &#39;Dick&#39;), 44)
+((&#39;GPE&#39;, &#39;Boswell&#39;), 47)		((&#39;PERSON&#39;, &#39;McAlpin&#39;), 40)
+((&#39;PERSON&#39;, &#39;Dick&#39;), 42)		((&#39;PERSON&#39;, &#39;Margaret Moffatt&#39;), 39)
+((&#39;ORGANIZATION&#39;, &#39;Priscilla&#39;), 41)		((&#39;PERSON&#39;, &#39;Mary McAdam&#39;), 36)
+((&#39;ORGANIZATION&#39;, &#39;McAlpin&#39;), 40)		((&#39;PERSON&#39;, &#39;Theodora&#39;), 34)
+((&#39;ORGANIZATION&#39;, &#39;Farwell&#39;), 39)		((&#39;LOCATION&#39;, &#39;States&#39;), 34)
 </pre>
 </div>
 </div>
@@ -13617,7 +13720,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Priscilla Glenn est le personnage principal de ce roman, il est donc normal de considérer que <strong>Stanford</strong> l'a mieux nommée alors que <strong>nltk</strong> pense à plusieurs reprise que Priscilla Glenn est autre chose.</p>
+<p>Priscilla Glenn est le personnage principal de ce roman, il est donc normal de considérer que <strong>Stanford</strong> l'a mieux nommée alors que <strong>nltk</strong> pense à plusieurs reprise que Priscilla Glenn est autre chose. <strong>Farwell</strong> est aussi un personnage du livre.</p>
+<p>Nous observons que <strong>Stanford</strong> a mieux nommé qu' <strong>nltk</strong>, nltk le fait plus rapidement, au détriment de la qualité</p>
 
 </div>
 </div>
@@ -13627,12 +13731,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">nltk_most_commons</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Priscilla occurence in nltk tagging:  </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">nltk_most_commons</span><span class="p">:</span>
     <span class="k">if</span> <span class="s2">&quot;Priscilla&quot;</span> <span class="ow">in</span> <span class="n">entity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;Glenn&quot;</span> <span class="ow">in</span> <span class="n">entity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
-        
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Priscilla occurence in Stanford tagging:  </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">stanfords_most_commons</span><span class="p">:</span>
     <span class="k">if</span> <span class="s2">&quot;Priscilla&quot;</span> <span class="ow">in</span> <span class="n">entity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;Glenn&quot;</span> <span class="ow">in</span> <span class="n">entity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
@@ -13652,7 +13756,9 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>((&#39;PERSON&#39;, &#39;Priscilla&#39;), 227)
+<pre>Priscilla occurence in nltk tagging:  
+
+((&#39;PERSON&#39;, &#39;Priscilla&#39;), 227)
 ((&#39;GPE&#39;, &#39;Priscilla&#39;), 193)
 ((&#39;ORGANIZATION&#39;, &#39;Priscilla&#39;), 41)
 ((&#39;PERSON&#39;, &#39;Glenn&#39;), 38)
@@ -13671,7 +13777,9 @@ div#notebook {
 ((&#39;ORGANIZATION&#39;, &#39;XXIV Priscilla&#39;), 1)
 ((&#39;ORGANIZATION&#39;, &#39;Priscilla Travers&#39;), 1)
 ((&#39;PERSON&#39;, &#39;Priscilla Travers&#39;), 1)
- - 
+
+Priscilla occurence in Stanford tagging:  
+
 ((&#39;PERSON&#39;, &#39;Priscilla&#39;), 531)
 ((&#39;PERSON&#39;, &#39;Priscilla Glenn&#39;), 54)
 ((&#39;PERSON&#39;, &#39;Glenn&#39;), 30)
@@ -13709,6 +13817,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.metrics.scores</span> <span class="k">import</span> <span class="n">accuracy</span>
 
 <span class="c1">#source : https://pythonprogramming.net/testing-stanford-ner-taggers-for-accuracy/</span>
+<span class="c1">#Les commentaires en anglais sont ceux de la source, pour une traduction, veuillez contacter nathan.gonzalezmontes@heig-vd.ch</span>
 
 <span class="c1"># Group NE data into tuples</span>
 <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
