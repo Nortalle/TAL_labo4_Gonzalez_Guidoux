@@ -2,6 +2,9 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+stanford
+eng.testa
+eng.testb
 stanford-corenlp-3.9.2-models-french.jar
 stanford-corenlp-3.9.2.jar
 
